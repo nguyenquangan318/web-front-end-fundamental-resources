@@ -1,0 +1,43 @@
+.container {
+  border: 1px solid gray;
+  border-radius: 10px;
+  background-color: #e9e9e9;
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+
+.text-gray{
+    color: gray;
+}
+
+.text-red{
+    color: red;
+}
+
+.text-purple{
+    color:#c69bdf;
+}
+
+.text-lightRed{
+    color: #e89ba4;
+}
+
+.text-lightBlue{
+    color: #7cbcef;
+}
+
+.child{
+    background-color: #eef7ff;
+    border-left: 3px solid green;
+    padding: 3px;
+}
+
+.button{
+    background-color: green;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    width: 130px;
+    height: 30px;
+    margin-top: 10px;
+}
