@@ -1,0 +1,31 @@
+.header-table{
+    width: 100%;
+    background-color: green;
+    color: white;
+}
+.header-left{
+    text-align: right;
+}
+.banner{
+    text-align: center;
+}
+.banner-btn{
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 3px;
+}
+.body-table{
+    width: 100%;
+    border-spacing: 10px;
+}
+.body-table td{
+    background-color: rgb(255, 8, 8);
+    border-radius: 5px;
+}
+.footer{
+    background-color: black;
+    color: white;
+    text-align: center;
+    height: 50px;
+}
