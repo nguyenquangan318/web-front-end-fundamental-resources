@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // BTVN 9
+        // //B1: Yêu cầu nhập số giờ, phút và giây
+        // let hour = +prompt("Nhập vào số giờ");
+
+        // let minute = +prompt("Nhập vào số phút");
+
+        // let second = +prompt("Nhập vào số giây");
+
+        // let timeFormat;
+        // //B2: xác định định dạng thời gian dựa trên số giờ
+        // if (hour >= 0 && hour < 12) {
+        //     timeFormat = "AM"
+        //     //B3: Nếu giờ >= 0 và < 12
+        //     //B3.1: Nếu giờ == 0 thì hiển thị là 12
+        //     if (hour === 0) {
+        //         hour = 12;
+        //     }
+        // } else if (hour > 11 && hour < 24) {
+        //     timeFormat = "PM"
+        //     //B4: Nếu giờ > 11 và < 24
+        //     //B4.1: Nếu giờ != 12 thì hiển thị là giờ - 12
+        //     if (hour !== 12) {
+        //         hour = hour - 12;
+        //     }
+        // }
+        // //B5: In ra kết quả
+        // console.log(`${hour}:${minute}:${second} ${timeFormat}`);
+
+        //BTVN 10
+        //B1: Yêu cầu người dùng nhập vào một số từ 0-999
+        let number = +prompt("Nhập vào một số");
+        let numberString;
+        //B2: Tìm ra chữ số hàng trăm, chục và đơn vị
+        let firstDigit = Math.floor(number / 100);
+        let secondDigit = Math.floor(number / 10 % 10);
+        let thirdDigit = number % 10;
+        //B3: Đưa ra chuỗi phù hợp cho từng giá trị của chữ số hàng trăm
+        switch (firstDigit) {
+            case 0:
+                break;
+            case 1:
+                numberString = "Một trăm"
+                break;
+            case 2:
+                numberString = "Hai trăm"
+                break;
+            case 3:
+                numberString = "Ba trăm"
+                break;
+            case 4:
+                numberString = "Bốn trăm"
+                break;
+            case 5:
+                numberString = "Năm trăm"
+                break;
+            case 6:
+                numberString = "Sáu trăm"
+                break;
+            case 7:
+                numberString = "Bảy trăm"
+                break;
+            case 8:
+                numberString = "Tám trăm"
+                break;
+            case 9:
+                numberString = "Chín trăm"
+                break;
+            default:
+                break;
+        }
+        numberString += " "
+        //B4: Đưa ra chuỗi phù hợp cho từng giá trị của chữ số hàng chục
+        switch (secondDigit) {
+            case 0:
+                if (thirdDigit != 0) {
+                    numberString += "linh"
+                }
+                break;
+            case 1:
+                numberString += "mười"
+                break;
+            case 2:
+                numberString += "hai mươi"
+                break;
+            case 3:
+                numberString += "ba mươi"
+                break;
+            case 4:
+                numberString += "bốn mươi"
+                break;
+            case 5:
+                numberString += "năm mươi"
+                break;
+            case 6:
+                numberString += "sáu mươi"
+                break;
+            case 7:
+                numberString += "bảy mươi"
+                break;
+            case 8:
+                numberString += "tám mươi"
+                break;
+            case 9:
+                numberString += "chín mươi"
+                break;
+            default:
+                break;
+        }
+        numberString += " "
+        //B5: Đưa ra chuỗi phù hợp cho từng giá trị của chữ số hàng đơn vị
+        switch (thirdDigit) {
+            case 0:
+                break;
+            case 1:
+                numberString += "một"
+                break;
+            case 2:
+                numberString += "hai"
+                break;
+            case 3:
+                numberString += "ba"
+                break;
+            case 4:
+                numberString += "bốn"
+                break;
+            case 5:
+                numberString += "năm"
+                break;
+            case 6:
+                numberString += "sáu"
+                break;
+            case 7:
+                numberString += "bảy"
+                break;
+            case 8:
+                numberString += "tám"
+                break;
+            case 9:
+                numberString += "chín"
+                break;
+            default:
+                break;
+        }
+        //B6: Kết hợp các chuỗi lại và in ra kết quả
+        console.log(numberString);
+
+    </script>
+</body>
+
+</html>

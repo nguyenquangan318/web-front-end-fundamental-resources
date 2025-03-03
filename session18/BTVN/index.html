@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Bài 8</h1>
+
+    <script>
+        //B1: Yêu cầu người dùng nhập vào 2 chuỗi định dạng YYYY-MM-DD và lưu lại
+        let dateString1 = prompt("Nhập vào ngày thứ 1");
+        let dateString2 = prompt("Nhập vào ngày thứ 2");
+        //B2: Tạo 2 đối tượng Date từ 2 chuỗi nhập vào
+        let date1 = new Date(dateString1);
+        let date2 = new Date(dateString2);
+        //B3: Chuyển ngày nhập vào về dạng miliseconds
+        let time1 = date1.getTime();
+        let time2 = date2.getTime();
+        //B4: Trừ 2 khoảng thời gian cho nhau
+        let time = time1 - time2;
+        //B5: Chuyển đổi độ lệch thời gian về dạng ngày
+        let result = time / 1000 / 60 / 60 / 24;
+        console.log("Số ngày cách biệt là: ", result);
+
+    </script>
+</body>
+
+</html>
