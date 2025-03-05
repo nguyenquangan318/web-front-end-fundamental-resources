@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // //B1: Khởi tạo và gán giá trị cho mật khẩu ban đầu
+        // let password = "123456789";
+        // let count = 0;
+        // //B2: Thực hiện vòng lặp ít nhất 5 lần
+        // for (let i = 0; i < 5; i++) {
+        //     //B2.1: Với mỗi lần lặp yêu cầu người dùng nhập vào mật khẩu
+        //     let input = prompt("Nhập vào mật khẩu")
+        //     //B2.2: So sánh mật khẩu ban đầu và mật khẩu đã nhập
+        //     if (password === input) {
+        //         //B2.3: Nếu giống nhau thì in kết quả và kết thúc vòng lặp
+        //         console.log("Bạn đã nhập đúng");
+        //         break;
+        //     }
+        //     count++;
+        // }
+        // //Nếu quá 5 lần thì in kết quả
+        // if (count == 5) {
+        //     console.log("Bạn đã nhập quá 5 lần");
+        // }
+
+        //Yêu cầu người dùng nhập đến khi đúng thì thôi
+        //B1: Khởi tạo và gán giá trị cho mật khẩu ban đầu
+        let password = "123456789";
+        let input;
+        do {
+            input = prompt("Mời nhập mật khẩu");
+        } while (input === password)
+        
+    </script>
+</body>
+
+</html>

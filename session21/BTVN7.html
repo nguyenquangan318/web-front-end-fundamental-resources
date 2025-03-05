@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1 1 2 3 5
+        //B1: Yêu cầu người dùng nhập vào một số
+        let number = prompt("Mời bạn nhập số")
+        //B2: Kiểm tra số đã nhập
+        if (number <= 0 || isNan(number)) {
+            console.log("Không hợp lệ");
+        } else {
+            //B3: In ra kết quả trong trường hợp số <= 2
+            if (number === 1) {
+                console.log(1);
+            } else if (number === 2) {
+                console.log(1);
+                console.log(1);
+            } else {
+                //B4: Nếu số >= 2 thì sử dụng vòng lặp
+                let firstFib = 1;
+                let secondFib = 1;
+                console.log(1);
+                console.log(1);
+                let nextFib;
+                for (let i = 2; i < number; i++) {
+                    //B5: Với mỗi lần lặp thì tìm ra số tiếp theo và lưu lại hai số trước đó
+                    nextFib = firstFib + secondFib;
+                    firstFib = secondFib;
+                    secondFib = nextFib;
+                    console.log(nextFib);
+                }
+            }
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //B1: Yêu cầu người dùng nhập vào một số
+        let number = prompt("Mời bạn nhập số")
+        //B2: Kiểm tra số đã nhập
+        if (number > 0) {
+            let numberOfPrime = 0;
+            let checkNum = 2;
+            //B3: Sử dụng vòng lặp với điều kiện là số lượng số đã in
+            while (numberOfPrime < number) {
+                let check = true;
+                //B4: Kiểm tra từng số tăng dần xem có phải số nguyên tố không
+                for (let i = 2; i <= checkNum / 2; i++) {
+                    if (checkNum % i === 0) {
+                        check = false;
+                        break;
+                    }
+                }
+                if (check) {
+                    //B5: Nếu là số nguyên tố thì in ra và tăng số lượng số đã in lên 1
+                    console.log(checkNum);
+                    numberOfPrime++;
+                }
+                //B6: Nếu không thì tiếp tục với số lớn hơn 1 đơn vị
+                checkNum++;
+            }
+        } else {
+            console.log("Không hợp lệ");
+        }
+    </script>
+</body>
+
+</html>
