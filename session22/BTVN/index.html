@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //B1: Yêu cầu người dùng nhập kích cỡ tam giác
+        let size = +prompt("Nhập vào kích cỡ");
+        //B2: Sử dụng vòng lặp để in từng dòng
+        for (let i = 0; i < size; i++) {
+            //B3: Sử dụng vòng lặp để in từng dấu * trên 1 dòng
+            for (let j = 0; j < size - i; j++) {
+                document.write("*");
+            }
+            document.write("<br>")
+        }
+        document.write("<br>")
+        for (let i = 0; i < size; i++) {
+            //B3: Sử dụng vòng lặp để in từng dấu * trên 1 dòng
+            for (let j = 0; j <= i; j++) {
+                document.write("*");
+            }
+            document.write("<br>")
+        }
+
+        document.write("<br>")
+        for (let i = 0; i < size; i++) {
+            for (let j = 0; j < size - i; j++) {
+                document.write("&nbsp;");
+            }
+            //B3: Sử dụng vòng lặp để in từng dấu * trên 1 dòng
+            for (let j = 0; j <= i; j++) {
+                document.write("*");
+            }
+            document.write("<br>")
+        }
+
+        document.write("<br>")
+        for (let i = 0; i < size; i++) {
+            //B3: Sử dụng vòng lặp để in từng dấu * trên 1 dòng
+            for (let j = 0; j <= i; j++) {
+                document.write("&nbsp;");
+            }
+            for (let j = 0; j < size - i; j++) {
+                document.write("*");
+            }
+            document.write("<br>")
+        }
+    </script>
+</body>
+
+</html>

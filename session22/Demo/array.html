@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let myArray = [1, 2, "Hello", true];
+        // for (let i = 0; i < myArray.length; i++) {
+        //     console.log(myArray[i]);
+        // }
+
+        for(let index in myArray){
+            console.log(myArray[index]);
+            // if(myArray[index] === 2){
+                break;
+            // }
+        }
+
+        for(let value of myArray){
+            console.log(value);
+        }
+    </script>
+</body>
+
+</html>
