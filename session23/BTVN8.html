@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //B1: Khời tạo và gán giá trị cho 1 mảng
+        let myArr = [4, 8, 7, 8, 1, 1, 9, 6, 9, 15, 3, 3, 3];
+        //B1.5: Mặc định, phần tử xuất hiện nhiều nhất là phần tử đầu tiên
+        let maxCountElement = myArr[0];
+        let maxCount = 1;
+        //Số lần xuất hiện nhiều nhất = số lần xuất hiện của phần tử đầu tiên
+        for (let i = 1; i < myArr.length; i++) {
+            if (myArr[0] === myArr[i]) {
+                maxCount++;
+            }
+        }
+        //B2: Duyệt qua từng phần tử trong mảng
+        for (let i = 1; i < myArr.length; i++) {
+            let count = 1;
+            //B3: Với mỗi phần tử tìm ra số lần xuất hiện của phần tử đó
+            for (let j = i + 1; j < myArr.length; j++) {
+                if (myArr[i] === myArr[j]) {
+                    count++;
+                }
+            }
+            //B4: So sánh số lần xuất hiện của phần tử đang được xét với phần tử trước đó
+            //Nếu số lần xuất hiện mà lớn hơn thì gán lại phần tử xuất hiện nhiều nhất và số lần xuất hiện
+            if (count >= maxCount) {
+                if (myArr[i] < maxCountElement || count > maxCount) {
+                    maxCountElement = myArr[i];
+                }
+                maxCount = count;
+            }
+        }
+        console.log(maxCountElement);
+
+    </script>
+</body>
+
+</html>

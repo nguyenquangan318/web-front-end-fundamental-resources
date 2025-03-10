@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //B1: Khởi tạo và gán giá trị cho mảng
+        let myArr = [2, 1, 7, 1, 1, 8, 6, 2, 2, 7];
+        let uniqueArr = []
+        //B2: Duyệt qua từng phần tử
+        for (let i = 0; i < myArr.length; i++) {
+            //B3: Thêm phần tử vào trong mảng unique nếu chưa có
+            if (!uniqueArr.includes(myArr[i])) {
+                uniqueArr.push(myArr[i]);
+            }
+        }
+        console.log(uniqueArr);
+    </script>
+</body>
+
+</html>
