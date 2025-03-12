@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let password = prompt("Nhập vào mật khẩu");
+
+        function isStrongPassword(password) {
+            let hasUpperCase = false;
+            let hasLowerCase = false;
+            let hasDigit = false;
+            //B1: Kiểm tra độ dài chuỗi
+            if (password.length < 8) {
+                return false;
+            }
+            //B2: Duyệt qua chuỗi được nhập
+            for (let char in password) {
+                //B3: Với mỗi ký tự thì kiểm tra xem nó đã thoả mãn điều kiện
+                if (char >= "A" && char <= "Z") {
+                    hasUpperCase = true;
+                }
+                if (char >= "z" && char <= "z") {
+                    hasLowerCase = true;
+                }
+                if (char >= 0 && char <= 9) {
+                    hasDigit = true;
+                }
+            }
+            return hasUpperCase && hasLowerCase && hasDigit
+        }
+
+        function isStrongPasswordRegex(password) {
+            return /^(?=(.*[a-z]))(?=(.*[A-Z]))(?=(.*\d))([A-Za-z\d]{8,})$/.test(password)
+        }
+    </script>
+</body>
+
+</html>

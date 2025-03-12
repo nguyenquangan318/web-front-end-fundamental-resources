@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //demo some
+        let arr = [1, 2, 3];
+        let normalResult = arr.some(function (num, index, arr) {
+            return num > 2
+        })
+        let arrowResult = arr.some((num, index, arr) => num > 2)
+        console.log(normalResult);
+        console.log(arrowResult);
+
+    </script>
+</body>
+
+</html>
