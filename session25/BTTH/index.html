@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let cart = [100, 200, 300]
+        //Hàm thêm giá tiền mới
+        function addPrice() {
+            let price = +prompt("Nhập giá tiền");
+            cart.push(price);
+        }
+        //Hàm cập nhật giá tiền
+        function updatePrice() {
+            let oldPrice = +prompt("Nhập vào giá tiền muốn cập nhật");
+            if (!cart.includes(oldPrice)) {
+                console.log("Không tồn tại");
+                return;
+            }
+            for (let i = 0; i < cart.length; i++) {
+                if (cart[i] === oldPrice) {
+                    cart[i] = +prompt("Nhập giá tiền mới");
+                }
+            }
+        }
+        //Hàm xoá bớt giá tiền
+        function removePrice() {
+            let inputPrice = +prompt("Nhập giá tiền muốn xoá");
+            if (cart.includes(inputPrice)) {
+                cart.splice(cart.indexOf(inputPrice), 1);
+            }
+        }
+        //Hàm hiển thị tổng tiền
+        function totalAmount() {
+            let sum = 0;
+            for(let i = 0; i < cart.length; i++){
+                sum += cart[i];
+            }
+            return "Tổng số tiền là " + sum;
+        }
+        console.log(totalAmount());
+
+    </script>
+</body>
+
+</html>
