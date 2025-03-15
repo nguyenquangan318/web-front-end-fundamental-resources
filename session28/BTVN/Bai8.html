@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function bigestNumber(num = 1234) {
+            //B1: Chuyển số về chuỗi
+            let stringNumber = num.toString();
+            console.log("Chuỗi số", stringNumber);
+
+            //B2: Chuyển chuỗi về mảng các chữ số
+            let numArr = stringNumber.split("");
+            console.log("Mảng chữ số: ", numArr);
+
+            //B3: Sắp xếp mảng các chữ số theo thứ tự giảm dần
+            numArr.sort((a, b) => b - a)
+            console.log("Mảng chữ số được sắp xếp: ", numArr);
+            //B4: Chuyển mảng về chuỗi
+            let resultString = numArr.join("");
+            console.log("Chuỗi kết quả: ", resultString);
+
+            //B5: Đưa chuỗi về số và trả về kết quả
+            return parseInt(resultString)
+        }
+        number = +prompt("Nhập vào số nguyên");
+        console.log(bigestNumber(number));
+
+    </script>
+</body>
+
+</html>

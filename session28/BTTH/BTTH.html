@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let products = [
+            {
+                id: 1,
+                name: "Máy tính",
+                price: 100,
+                amount: 3
+            },
+            {
+                id: 2,
+                name: "TV",
+                price: 100,
+                amount: 3
+            },
+            {
+                id: 3,
+                name: "Tủ lạnh",
+                price: 100,
+                amount: 0
+            }
+        ]
+        let cart = []
+        function buyProduct(id = 1, amount = 2) {
+            let product = products.find((product) => product.id === id);
+            if (!product) {
+                console.log("Sản phẩm không tồn tại");
+                return
+            }
+            if (product.amount < amount) {
+                console.log("Hết hàng");
+                return
+            }
+            let cartItem = cart.find((item) => item.id === id)
+            if (cartItem) {
+                cartItem.amount += amount;
+            } else {
+                product.amount -= amount;
+                cart.push({
+                    ...product,
+                    amount: amount
+                })
+            }
+            console.log(cart);
+            console.log(products);
+        }
+        buyProduct(1)
+    </script>
+</body>
+
+</html>

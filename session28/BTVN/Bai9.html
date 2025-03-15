@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let numbers = [5, 8, 6, 3, 4, 2, 12, 24, 7];
+        function sortEvenElement(arr = []) {
+            console.log("Mảng ban đầu: ", arr);
+
+            //B1: Tạo ra mảng chỉ chứa phần tử là số chẵn
+            let evenNumbers = numbers.filter((number) => number % 2 === 0);
+            console.log("Mảng các số chẵn: ", evenNumbers);
+
+            //B2: Sắp xếp các phần tử trong mảng đã tạo
+            evenNumbers.sort((a, b) => a - b)
+            console.log("Mảng các số chẵn đã sắp xếp: ", evenNumbers);
+            //B3: Tạo ra mảng mà chỉ các phần tử chẵn được sắp xếp từ mảng ban đầu
+            let evenIndex = 0;
+            let resultArr = arr.map((number) => {
+                if (number % 2 !== 0) {
+                    return number;
+                } else {
+                    return evenNumbers[evenIndex++];
+                }
+            })
+            console.log("Mảng kết quả: ", resultArr);
+            return resultArr;
+        }
+        sortEvenElement(numbers)
+    </script>
+</body>
+
+</html>

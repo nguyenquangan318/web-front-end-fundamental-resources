@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let students = [
+            {
+                id: 1,
+                name: "An"
+            },
+            {
+                id: 2,
+                name: "Hùng"
+            },
+            {
+                id: 3,
+                name: "Trung"
+            },
+        ]
+
+        //Tạo ra các hàm tương ứng với từng chức năng đọc, thêm, sửa và xoá
+        //Hàm đọc từng đối tượng trong mảng
+        function readArr() {
+            for (let student of students) {
+                console.log(`id: ${student.id} name: ${student.name}`);
+            }
+        }
+
+        //Hàm thêm một sinh viên
+        function addStudent() {
+            let newId = +prompt("Nhập id sinh viên muốn thêm");
+            let newName = prompt("Nhập tên sinh viên muốn thêm");
+            let newStudent = {
+                id: newId,
+                name: newName
+            }
+            students.push(newStudent);
+            readArr();
+        }
+
+        //Hàm sửa một sinh viên
+        function updateStudent() {
+            let updateId = +prompt("Nhập id sinh viên muốn cập nhật");
+            let updateIndex = students.findIndex(student => updateId === student.id);
+            if (updateIndex !== -1) {
+                let newName = prompt("Nhập tên sau sửa");
+                students[updateIndex].name = newName;
+            }
+            readArr()
+        }
+
+        ///Hàm xoá một sinh viên
+        function deleteStudent() {
+            let deleteId = +prompt("Nhập id muốn xoá");
+            let deleteIndex = students.findIndex(student => student.id === deleteId);
+            students.splice(deleteIndex, 1);
+            readArr();
+        }
+        deleteStudent();
+    </script>
+</body>
+
+</html>
