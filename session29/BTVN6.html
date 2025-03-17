@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const cart = [
+
+            { name: "Mèn mén", price: 30000, quantity: 2 },
+
+            { name: "Mì tôm", price: 5000, quantity: 1 },
+
+            { name: "Bánh bao", price: 15000, quantity: 3 }
+
+        ];
+        // let total = 0;
+        // //Sử dụng vòng lặp
+        // for (let i = 0; i < cart.length; i++) {
+        //     // console.log(total);//0 60000 65000
+        //     total += cart[i].price * cart[i].quantity;
+        //     // console.log(total);//60000 65000 10000
+        // }
+        // console.log(total);
+
+        //Sử dụng phương thức reduce
+        let total = cart.reduce(function (total, item) {
+            return item.price * item.quantity;
+        }, 0)
+        console.log(total);
+
+    </script>
+</body>
+
+</html>
