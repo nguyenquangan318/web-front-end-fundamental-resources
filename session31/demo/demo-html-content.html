@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <p id="paragraph1">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia optio laboriosam ratione et! Accusantium
+            itaque corrupti reprehenderit facere veniam harum maiores aspernatur voluptates? Et neque dignissimos
+            laudantium, fugit saepe facilis?
+        </p>
+        <p id="paragraph2" style="display: none;">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore ut nobis id itaque, veniam quae dicta
+            dolorem asperiores quisquam aut iusto similique, doloribus neque aperiam voluptas qui, est harum. Nemo.
+        </p>
+    </div>
+    <script>
+        let parent = document.getElementsByTagName("div")[0];
+        parent.textContent = "Đây là giá trị bị ghi đè trong javascript"
+        console.log(parent.textContent);
+
+    </script>
+</body>
+
+</html>

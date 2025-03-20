@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent {
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent test-class" id="parent-div" name="123" testAttribute="test-value">
+        123
+        <button class="first-child" id="child-button">Click</button>
+        123
+    </div>
+    <br><br>
+    <form action="" onsubmit="submitForm(event)">
+        <label for="name">Họ và tên</label><br>
+        <input type="text" id="name" name="fullName"><br><br>
+        <input class="submit-button" type="submit" value="Submit">
+    </form>
+    <script>
+        let parentDivById = document.getElementById("parent-div")
+        console.log(parentDivById.getAttribute("testAttribute"));
+        console.log(parentDivById.classList);
+        let parentDiv = document.getElementsByTagName('div');
+        let childButton = document.getElementsByClassName("first-child")[0]
+        let submitButton = document.getElementsByClassName("submit-button")[0]
+        function submitForm(e) {
+            e.preventDefault()
+            console.log(e);
+        }
+        submitButton.addEventListener("click", () => {
+            console.log("button clicked");
+        })
+
+    </script>
+</body>
+
+</html>

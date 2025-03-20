@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 class="class1" id="headerId" testAttribute="testValue">demo tag property</h1>
+    <script>
+        let header = document.getElementsByTagName("h1")[0]
+        header.classList.toggle("class2")
+        header.classList.contains("class2")
+        console.log(header.classList);
+        let id = header.id
+        let customAtribute = header.getAttribute("testAttribute")
+        console.log(customAtribute);
+
+    </script>
+</body>
+
+</html>

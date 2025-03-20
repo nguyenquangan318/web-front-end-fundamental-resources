@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="console.log('button');">Click me</button>
+    <div>Đây là thẻ được gắn sự kiện bằng thuộc tính</div>
+    <script>
+        function clickDiv() {
+            console.log("thẻ đã được click");
+        }
+        let divElement = document.getElementsByTagName("div")[0];
+        divElement.addEventListener("click", function click() {
+            console.log("click bằng addEventListener");
+        })
+
+    </script>
+</body>
+
+</html>

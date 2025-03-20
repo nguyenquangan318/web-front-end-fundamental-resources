@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let products = [
+            {
+                id: 1,
+                name: "Mèn mén",
+                price: 20000,
+                quantity: 20,
+                category: "Món ăn dân tộc Mông"
+            },
+            {
+                id: 2,
+                name: "mứt",
+                price: 80000,
+                quantity: 21,
+                category: "Món ăn dân tộc Mông"
+            },
+            {
+                id: 3,
+                name: "Cơm lam",
+                price: 40000,
+                quantity: 15,
+                category: "Món ăn dân tộc Kinh"
+            },
+            {
+                id: 4,
+                name: "Bánh đậu xanh",
+                price: 60000,
+                quantity: 30,
+                category: "Món ăn dân tộc Mông"
+            }
+        ];
+        let cart = [];
+        function showByCategory() {
+            let searchCategory = prompt("Nhập danh mục muốn hiển thị");
+            let searchProducts = products.filter((product) => product.category === searchCategory)
+            if (searchProducts.length === 0) {
+                alert("Không có sản phẩm");
+            } else {
+                console.log("Danh sách sp trong danh mục" + searchCategory);
+                searchProducts.forEach(element => {
+                    console.log("id: " + element.name);
+                });
+            }
+        }
+        function addToCart() {
+            //B1: Yêu cầu nhập id sản phẩm muốn mua
+            let boughtId = +prompt("Nhập id muốn mua");
+            //B2: Kiểm tra xem sản phẩm có tồn tại trong mảng sản phẩm
+            let productIndex = products.findIndex((item) => item.id === boughtId)
+            if (productIndex === -1) {
+                //B3: Nếu không tồn tại thì thông bào và kết thúc hàm
+                console.log("Sản phẩm không tồn tại");
+                return;
+            }
+            //B4: Nếu tồn tại thì yêu cầu người dùng nhập số lượng muốn mua
+            let boughtQuantity = +prompt("Nhập số lượng muốn mua");
+            //B5: Kiểm tra xem số lượng còn lại có đủ không
+            if (products[productIndex].quantity < boughtQuantity) {
+                //B6: Nếu không đủ thì thông bào và kết thúc hàm
+                console.log("Không còn đủ số lượng để mua");
+                return;
+            }
+            //B7: Nếu đủ thì giảm số lượng sản phẩm đó trong mảng sản phẩm đi
+            products[productIndex].quantity -= boughtQuantity;
+            //B8: Kiểm tra xem trong giỏ đã có sản phẩm đó chưa
+            let cartIndex = cart.findIndex((item) => item.id === boughtId);
+            if (cartIndex === -1) {
+                //B9: Nếu chưa có thì thêm sản phẩm vào giỏ hàng
+                cart.push({
+                    id: boughtId,
+                    name: products[productIndex].name,
+                    price: products[productIndex].price,
+                    category: products[productIndex].category,
+                    quantity: boughtQuantity
+                })
+            } else {
+                //B10: Nếu có rồi thì chỉ tăng số lượng sản phẩm trong giỏ hàng lên
+                cart[cartIndex].quantity += boughtQuantity
+            }
+            console.log(cart);
+            console.log(products);
+        }
+        do {
+            console.log("=====MENU=====");
+            console.log("1. Hiển thị các sản phẩm theo danh mục");
+            console.log("2. Chọn sản phẩm để mua");
+            console.log("3. Sắp xếp các sản phẩm trong cửa hàng theo giá");
+            console.log("4. Tính số tiền thanh toán trong giỏ hàng");
+            console.log("5. Thoát");
+            choice = +prompt("Mời nhập lựa chọn");
+            switch (choice) {
+                case 1:
+                    showByCategory();
+                    break;
+                case 2:
+                    addToCart()
+                    break;
+                case 3:
+                    products.sort((a, b) => a.price - b.price);
+                    console.log(products);
+                    break;
+                case 4:
+                    if (cart.length === 0) {
+                        console.log("Không có gì trong giỏ");
+                    } else {
+                        // let total = 0;
+                        // cart.forEach((item) => {
+                        //     total += item.price * item.quantity;
+                        // })
+                        let total = cart.reduce(
+                            (sum, item) =>
+                                sum + item.quantity * item.price, 0)
+                        console.log(total);
+                    }
+                    break;
+                case 5:
+                    break;
+                default:
+                    console.log("Không hợp lệ");
+            }
+        } while (choice !== 5)
+
+    </script>
+</body>
+
+</html>
