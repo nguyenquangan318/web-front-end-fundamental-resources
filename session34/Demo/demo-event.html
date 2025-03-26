@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" onsubmit="submitForm(event)">
+        <h3>Đăng ký</h3>
+        <label for="emai">Email</label><br><br>
+        <input type="text" id="email"><br><br>
+        <input type="submit">
+    </form>
+
+    <script>
+        function submitForm(e) {
+            e.preventDefault()
+            console.log("Form đã được submit");
+        }
+    </script>
+</body>
+
+</html>

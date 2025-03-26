@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Giao diện Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-img-top {
+            height: 150px;
+            /* Đặt chiều cao cố định cho ảnh */
+            object-fit: cover;
+            /* Đảm bảo ảnh không bị méo */
+        }
+
+        .card-body {
+            flex-grow: 1;
+            /* Giúp nội dung dàn đều theo chiều cao */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-body p {
+            flex-grow: 1;
+            /* Đẩy nút xuống đáy */
+        }
+
+        .btn {
+            margin-top: auto;
+            /* Đưa nút "Buy" xuống dưới cùng */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-3">
+        <div class="row mb-3">
+            <div class="col">
+                <input id="input" type="text" class="form-control" placeholder="Search">
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-success" id="search-btn" onclick="searchProducts()">Search</button>
+            </div>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 g-3" id="products-container">
+            <!-- <div class="col">
+                <div class="card">
+                    <img src="https://bgr.com/wp-content/uploads/2023/09/Apple-Watch-Series-9.jpg?quality=82&strip=all"
+                        class="card-img-top" alt="Laptop Dell XPS 15">
+                    <div class="card-body">
+                        <h5 class="card-title">Laptop Dell XPS 15</h5>
+                        <p class="card-text">Laptop cao cấp, CPU Intel Core i7, RAM 16GB.</p>
+                        <p><strong>35,990,000 VND</strong></p>
+                        <button class="btn btn-primary">Buy</button>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="BTVN.js"></script>
+</body>
+
+</html>
